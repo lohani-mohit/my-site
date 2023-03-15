@@ -92,22 +92,28 @@ a:hover {
     text-align: left;
 }
 
-.programming-img {
+.testing-img{
     width: 25%;
     float: left;
     margin-right: 30px;
 }
 
-.automation-img {
+.programming-img {
     width: 25%;
     float: right;
     margin-left: 30px;
 }
 
-.others-img {
+.automation-img {
     width: 25%;
     float: left;
     margin-right: 30px;
+}
+
+.others-img {
+    width: 25%;
+    float: right;
+    margin-left: 30px;
 }
 
 .footer-link {
