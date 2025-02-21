@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -136,70 +136,112 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-6xl mx-auto"
+          className="max-w-7xl mx-auto"
         >
           <h2 className="text-4xl font-bold text-center mb-16">
             Professional Journey
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.company}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="text-4xl">{exp.icon}</span>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-primary">
-                          {exp.company}
-                        </h3>
-                        <p className="text-lg font-semibold">{exp.role}</p>
+          {/* Mobile Scrollable / Desktop Grid */}
+          <div className="md:grid md:grid-cols-2 md:gap-8 -mx-4 md:mx-0 px-4 md:px-0">
+            {/* Mobile Scroll Container */}
+            <div className="flex md:contents overflow-x-auto gap-6 pb-6 md:pb-0 -mx-4 px-4 md:gap-0 snap-x snap-mandatory md:snap-none">
+              {experiences.map((exp, index) => (
+                <motion.div
+                  key={exp.company}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[85vw] md:w-auto snap-center md:snap-align-none md:mb-8"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="text-4xl">{exp.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      {" "}
+                      {/* Added min-w-0 to prevent text overflow */}
+                      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                        <div className="min-w-0">
+                          {" "}
+                          {/* Container for text that might overflow */}
+                          <h3 className="text-xl font-bold text-primary truncate">
+                            {exp.company}
+                          </h3>
+                          <p className="text-lg font-semibold truncate">
+                            {exp.role}
+                          </p>
+                        </div>
+                        <span className="text-sm text-neutral/80 bg-base-200 px-3 py-1 rounded-full whitespace-nowrap">
+                          {exp.period}
+                        </span>
                       </div>
-                      <span className="text-sm text-neutral/80 bg-base-200 px-3 py-1 rounded-full">
-                        {exp.period}
-                      </span>
-                    </div>
+                      <div className="space-y-4">
+                        <div>
+                          <ul className="list-disc list-inside space-y-1">
+                            {exp.highlights.map((highlight, i) => (
+                              <li
+                                key={i}
+                                className="text-sm text-neutral/90 break-words"
+                              >
+                                {highlight}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
 
-                    <div className="space-y-4">
-                      <div>
-                        <ul className="list-disc list-inside space-y-1">
-                          {exp.highlights.map((highlight, i) => (
-                            <li key={i} className="text-sm text-neutral/90">
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-primary/80 mb-2">
-                          Technologies
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {exp.tech.map((tech, i) => (
-                            <span
-                              key={i}
-                              className="text-xs px-2 py-1 bg-base-300 rounded-full"
-                            >
-                              {tech}
-                            </span>
-                          ))}
+                        <div>
+                          <h4 className="text-sm font-semibold text-primary/80 mb-2">
+                            Technologies
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.tech.map((tech, i) => (
+                              <span
+                                key={i}
+                                className="text-xs px-2 py-1 bg-base-300 rounded-full whitespace-nowrap"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
+
+          {/* Mobile Scroll Hint */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="text-center text-sm text-neutral/60 mt-4 md:hidden"
+          >
+            Swipe to explore more experiences
+          </motion.p>
         </motion.div>
       </div>
+
+      {/* Custom Scrollbar Styles */}
+      <style jsx global>{`
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .overflow-x-auto::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .overflow-x-auto {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }
+
+        @media (min-width: 768px) {
+          .contents {
+            display: contents;
+          }
+        }
+      `}</style>
     </section>
   );
 }
