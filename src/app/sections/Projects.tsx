@@ -143,26 +143,22 @@ export default function Projects() {
           </h2>
 
           {/* Mobile Scrollable / Desktop Grid */}
-          <div className="md:grid md:grid-cols-2 md:gap-8 -mx-4 md:mx-0 px-4 md:px-0">
+          <div className="md:grid md:grid-cols-2 md:gap-8">
             {/* Mobile Scroll Container */}
-            <div className="flex md:contents overflow-x-auto gap-6 pb-6 md:pb-0 -mx-4 px-4 md:gap-0 snap-x snap-mandatory md:snap-none">
+            <div className="flex md:contents overflow-x-auto overflow-y-hidden pb-6 md:pb-0 gap-6 md:gap-0 snap-x snap-mandatory md:snap-none touch-pan-x will-change-scroll isolate">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.company}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[85vw] md:w-auto snap-center md:snap-align-none md:mb-8"
+                  className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[90vw] max-w-[500px] md:w-auto snap-center md:snap-align-none md:mb-8"
                 >
                   <div className="flex items-start gap-4">
                     <span className="text-4xl">{exp.icon}</span>
                     <div className="flex-1 min-w-0">
-                      {" "}
-                      {/* Added min-w-0 to prevent text overflow */}
                       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                         <div className="min-w-0">
-                          {" "}
-                          {/* Container for text that might overflow */}
                           <h3 className="text-xl font-bold text-primary truncate">
                             {exp.company}
                           </h3>
@@ -174,6 +170,7 @@ export default function Projects() {
                           {exp.period}
                         </span>
                       </div>
+
                       <div className="space-y-4">
                         <div>
                           <ul className="list-disc list-inside space-y-1">
@@ -234,6 +231,14 @@ export default function Projects() {
         .overflow-x-auto {
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
+          overscroll-behavior-x: contain;
+          overscroll-behavior-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        /* Prevent vertical scroll interference */
+        .overflow-x-auto {
+          touch-action: pan-x pan-y pinch-zoom;
         }
 
         @media (min-width: 768px) {
