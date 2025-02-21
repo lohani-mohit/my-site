@@ -129,6 +129,20 @@ export default function Projects() {
     threshold: 0.1,
   });
 
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: "left" | "right") => {
+    if (!scrollContainerRef.current) return;
+
+    const container = scrollContainerRef.current;
+    const scrollAmount = container.clientWidth * 0.9; // 90% of container width
+
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="projects" className="w-full py-20 bg-base-200">
       <div className="container mx-auto px-4">
@@ -146,16 +160,29 @@ export default function Projects() {
           {/* Mobile Scrollable / Desktop Grid */}
           <div className="relative">
             {/* Swipe Indicators for Mobile */}
-            <div className="md:hidden absolute -left-2 top-1/2 -translate-y-1/2 bg-base-100/80 p-2 rounded-full z-10">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => handleScroll("left")}
+              className="md:hidden absolute -left-2 top-1/2 -translate-y-1/2 bg-base-100/80 p-2 rounded-full z-10 cursor-pointer hover:bg-base-100 active:bg-base-200 transition-colors"
+            >
               <FaChevronLeft className="text-primary/60 text-xl" />
-            </div>
-            <div className="md:hidden absolute -right-2 top-1/2 -translate-y-1/2 bg-base-100/80 p-2 rounded-full z-10">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => handleScroll("right")}
+              className="md:hidden absolute -right-2 top-1/2 -translate-y-1/2 bg-base-100/80 p-2 rounded-full z-10 cursor-pointer hover:bg-base-100 active:bg-base-200 transition-colors"
+            >
               <FaChevronRight className="text-primary/60 text-xl" />
-            </div>
+            </motion.div>
 
             <div className="md:grid md:grid-cols-2 md:gap-8 md:place-items-center">
               {/* Mobile Scroll Container */}
-              <div className="flex md:contents overflow-x-auto overflow-y-hidden pb-6 md:pb-0 gap-6 md:gap-0 snap-x snap-mandatory md:snap-none touch-pan-x will-change-scroll isolate px-4 -mx-4 md:mx-0">
+              <div
+                ref={scrollContainerRef}
+                className="flex md:contents overflow-x-auto overflow-y-hidden pb-6 md:pb-0 gap-6 md:gap-0 snap-x snap-mandatory md:snap-none touch-pan-x will-change-scroll isolate px-4 -mx-4 md:mx-0 scroll-smooth"
+              >
                 {experiences.map((exp, index) => (
                   <motion.div
                     key={exp.company}
@@ -220,16 +247,30 @@ export default function Projects() {
           </div>
 
           {/* Mobile Scroll Hint */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
             className="text-center text-sm text-neutral/60 mt-4 md:hidden flex items-center justify-center gap-2"
           >
-            <FaChevronLeft className="text-primary/60" />
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => handleScroll("left")}
+              className="cursor-pointer"
+            >
+              <FaChevronLeft className="text-primary/60" />
+            </motion.span>
             Swipe to explore more experiences
-            <FaChevronRight className="text-primary/60" />
-          </motion.p>
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => handleScroll("right")}
+              className="cursor-pointer"
+            >
+              <FaChevronRight className="text-primary/60" />
+            </motion.span>
+          </motion.div>
         </motion.div>
       </div>
 
