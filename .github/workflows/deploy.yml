@@ -41,12 +41,18 @@ jobs:
         run: |
           touch ./dist/.nojekyll
           cp dist/index.html dist/404.html
+          rm -f dist/README.md
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
-          clean-exclude: |
-            .nojekyll
           clean: true
+          single-commit: true
+          commit-message: "Deploy Next.js site to Pages"
