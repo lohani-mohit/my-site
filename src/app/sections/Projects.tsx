@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const experiences = [
   {
@@ -143,68 +144,78 @@ export default function Projects() {
           </h2>
 
           {/* Mobile Scrollable / Desktop Grid */}
-          <div className="md:grid md:grid-cols-2 md:gap-8">
-            {/* Mobile Scroll Container */}
-            <div className="flex md:contents overflow-x-auto overflow-y-hidden pb-6 md:pb-0 gap-6 md:gap-0 snap-x snap-mandatory md:snap-none touch-pan-x will-change-scroll isolate">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={exp.company}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[90vw] max-w-[500px] md:w-auto snap-center md:snap-align-none md:mb-8"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-4xl">{exp.icon}</span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
-                        <div className="min-w-0">
-                          <h3 className="text-xl font-bold text-primary truncate">
-                            {exp.company}
-                          </h3>
-                          <p className="text-lg font-semibold truncate">
-                            {exp.role}
-                          </p>
-                        </div>
-                        <span className="text-sm text-neutral/80 bg-base-200 px-3 py-1 rounded-full whitespace-nowrap">
-                          {exp.period}
-                        </span>
-                      </div>
+          <div className="relative">
+            {/* Swipe Indicators for Mobile */}
+            <div className="md:hidden absolute -left-2 top-1/2 -translate-y-1/2 bg-base-100/80 p-2 rounded-full z-10">
+              <FaChevronLeft className="text-primary/60 text-xl" />
+            </div>
+            <div className="md:hidden absolute -right-2 top-1/2 -translate-y-1/2 bg-base-100/80 p-2 rounded-full z-10">
+              <FaChevronRight className="text-primary/60 text-xl" />
+            </div>
 
-                      <div className="space-y-4">
-                        <div>
-                          <ul className="list-disc list-inside space-y-1">
-                            {exp.highlights.map((highlight, i) => (
-                              <li
-                                key={i}
-                                className="text-sm text-neutral/90 break-words"
-                              >
-                                {highlight}
-                              </li>
-                            ))}
-                          </ul>
+            <div className="md:grid md:grid-cols-2 md:gap-8 md:place-items-center">
+              {/* Mobile Scroll Container */}
+              <div className="flex md:contents overflow-x-auto overflow-y-hidden pb-6 md:pb-0 gap-6 md:gap-0 snap-x snap-mandatory md:snap-none touch-pan-x will-change-scroll isolate px-4 -mx-4 md:mx-0">
+                {experiences.map((exp, index) => (
+                  <motion.div
+                    key={exp.company}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[90vw] max-w-[500px] md:w-auto snap-center md:snap-align-none md:mb-8"
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="text-4xl">{exp.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                          <div className="min-w-0">
+                            <h3 className="text-xl font-bold text-primary truncate">
+                              {exp.company}
+                            </h3>
+                            <p className="text-lg font-semibold truncate">
+                              {exp.role}
+                            </p>
+                          </div>
+                          <span className="text-sm text-neutral/80 bg-base-200 px-3 py-1 rounded-full whitespace-nowrap">
+                            {exp.period}
+                          </span>
                         </div>
 
-                        <div>
-                          <h4 className="text-sm font-semibold text-primary/80 mb-2">
-                            Technologies
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.tech.map((tech, i) => (
-                              <span
-                                key={i}
-                                className="text-xs px-2 py-1 bg-base-300 rounded-full whitespace-nowrap"
-                              >
-                                {tech}
-                              </span>
-                            ))}
+                        <div className="space-y-4">
+                          <div>
+                            <ul className="list-disc list-inside space-y-1">
+                              {exp.highlights.map((highlight, i) => (
+                                <li
+                                  key={i}
+                                  className="text-sm text-neutral/90 break-words"
+                                >
+                                  {highlight}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div>
+                            <h4 className="text-sm font-semibold text-primary/80 mb-2">
+                              Technologies
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {exp.tech.map((tech, i) => (
+                                <span
+                                  key={i}
+                                  className="text-xs px-2 py-1 bg-base-300 rounded-full whitespace-nowrap"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -213,9 +224,11 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="text-center text-sm text-neutral/60 mt-4 md:hidden"
+            className="text-center text-sm text-neutral/60 mt-4 md:hidden flex items-center justify-center gap-2"
           >
+            <FaChevronLeft className="text-primary/60" />
             Swipe to explore more experiences
+            <FaChevronRight className="text-primary/60" />
           </motion.p>
         </motion.div>
       </div>
