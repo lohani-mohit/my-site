@@ -12,7 +12,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{
-            backgroundImage: "url('/my-site/images/night-camp.jpg')",
+            backgroundImage: "url('images/night-camp.jpg')",
             backgroundPosition: "center 75%",
             filter: "contrast(1.4) brightness(0.9)",
           }}
@@ -53,13 +53,13 @@ export default function Hero() {
               className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-primary/20 shadow-xl relative"
             >
               <Image
-                loader={myImageLoader}
-                src="/images/profile.jpeg"
+                src="images/profile.jpeg"
                 alt="Mohit Lohani"
                 width={128}
                 height={128}
-                className="object-cover"
+                className="object-cover w-full h-full"
                 priority
+                unoptimized
               />
             </motion.div>
             <motion.h1
@@ -113,7 +113,7 @@ export default function Hero() {
             className="mt-12"
           >
             <p className="text-lg text-white/90 font-medium drop-shadow-lg">
-              QA Expert • Developer • Musician • Mountain Enthusiast
+              QA Expert • Developer • Musician
             </p>
           </motion.div>
 

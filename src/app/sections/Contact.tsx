@@ -89,20 +89,6 @@ export default function Contact() {
             collaborations, or just want to say hi, I'd love to hear from you!
           </p>
 
-          <div className="bg-base-300/50 p-6 rounded-lg mb-12">
-            <h3 className="text-xl font-semibold mb-4">Musical Interests</h3>
-            <p className="text-neutral/80 mb-4">
-              I'm always excited to connect with fellow musicians! Whether it's
-              jamming, collaborating on projects, or discussing music theory,
-              let's create something amazing together.
-            </p>
-            <div className="flex justify-center gap-4 text-2xl text-primary">
-              <FaGuitar />
-              <FaMusic className="transform rotate-90" />
-              <FaMusic />
-            </div>
-          </div>
-
           <div className="flex justify-center space-x-8 mb-12">
             {socialLinks.map((link) => (
               <motion.a
