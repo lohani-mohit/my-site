@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaGuitar, FaMusic } from "react-icons/fa";
+import { GiHarmonica, GiPianoKeys } from "react-icons/gi";
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -47,22 +49,47 @@ export default function About() {
 
             <div className="bg-base-200 rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-semibold text-primary mb-6">
-                Beyond Tech
+                Musical Journey
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="text-3xl">🏔️</span>
+                  <span className="text-3xl text-primary">
+                    <FaGuitar />
+                  </span>
                   <div>
-                    <h4 className="text-xl font-semibold mb-3">
-                      Mountain Soul
-                    </h4>
+                    <h4 className="text-xl font-semibold mb-2">Guitar</h4>
                     <p className="leading-relaxed">
-                      As an avid Himalayan trekker, I find my greatest
-                      inspiration in the mountains. Each trek teaches invaluable
-                      lessons about persistence, adaptability, and maintaining
-                      focus under challenging conditions. The mountains have
-                      become my second home, where every journey reinforces the
-                      importance of preparation, teamwork, and resilience.
+                      My primary instrument and constant companion. From
+                      acoustic melodies to electric riffs, music has been my way
+                      of expressing emotions and connecting with others.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl text-primary">
+                    <FaMusic className="transform rotate-90" />
+                  </span>
+                  <div>
+                    <h4 className="text-xl font-semibold mb-2">Harmonica</h4>
+                    <p className="leading-relaxed">
+                      Adding soulful blues and folk elements to my musical
+                      repertoire, the harmonica brings a unique dimension to my
+                      performances.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl text-primary">
+                    <FaMusic />
+                  </span>
+                  <div>
+                    <h4 className="text-xl font-semibold mb-2">Piano</h4>
+                    <p className="leading-relaxed">
+                      Currently exploring the world of keys, adding another
+                      layer to my musical journey and understanding of
+                      composition.
                     </p>
                   </div>
                 </div>
@@ -88,9 +115,9 @@ export default function About() {
                   icon: "🌱",
                 },
                 {
-                  title: "Maintain Balance",
-                  desc: "Recognizing progress keeps you grounded; knowing there's more keeps you hungry",
-                  icon: "⚖️",
+                  title: "Balance Tech & Art",
+                  desc: "Combining logical thinking with creative expression leads to innovative solutions",
+                  icon: "🎵",
                 },
               ].map((belief) => (
                 <motion.div

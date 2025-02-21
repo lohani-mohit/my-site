@@ -3,7 +3,14 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
-import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+  FaGuitar,
+  FaMusic,
+} from "react-icons/fa";
+import { BsPianoFill } from "react-icons/bs";
 
 const socialLinks = [
   {
@@ -78,10 +85,24 @@ export default function Contact() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-4xl font-bold mb-8">Get in Touch</h2>
-          <p className="text-xl text-neutral/90 mb-12">
-            Whether you want to discuss a project, ask about my experience, or
-            just want to say hi, I'd love to hear from you!
+          <p className="text-xl text-neutral/90 mb-6">
+            Whether you want to discuss a project, explore musical
+            collaborations, or just want to say hi, I'd love to hear from you!
           </p>
+
+          <div className="bg-base-300/50 p-6 rounded-lg mb-12">
+            <h3 className="text-xl font-semibold mb-4">Musical Interests</h3>
+            <p className="text-neutral/80 mb-4">
+              I'm always excited to connect with fellow musicians! Whether it's
+              jamming, collaborating on projects, or discussing music theory,
+              let's create something amazing together.
+            </p>
+            <div className="flex justify-center gap-4 text-2xl text-primary">
+              <FaGuitar />
+              <FaMusic className="transform rotate-90" />
+              <FaMusic />
+            </div>
+          </div>
 
           <div className="flex justify-center space-x-8 mb-12">
             {socialLinks.map((link) => (

@@ -10,7 +10,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{
-            backgroundImage: "url('/my-site/images/night-camp.jpg')",
+            backgroundImage: "url('/images/night-camp.jpg')",
             backgroundPosition: "center 75%",
             filter: "contrast(1.4) brightness(0.9)",
           }}
@@ -51,7 +51,7 @@ export default function Hero() {
               className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-primary/20 shadow-xl"
             >
               <img
-                src="/my-site/images/profile.jpeg"
+                src="/images/profile.jpeg"
                 alt="Mohit Lohani"
                 className="w-full h-full object-cover"
               />
