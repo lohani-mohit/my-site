@@ -5,11 +5,11 @@
   "homepage": "https://lohani-mohit.github.io/my-site",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
-    "deploy": "gh-pages -d out -t true"
+    "clean": "rm -rf .next dist out",
+    "deploy": "gh-pages -d dist -t true"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
