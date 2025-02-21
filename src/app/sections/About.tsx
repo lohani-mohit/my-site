@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaGuitar, FaMusic } from "react-icons/fa";
-import { GiHarmonica, GiPianoKeys } from "react-icons/gi";
 
 export default function About() {
   const [ref, inView] = useInView({

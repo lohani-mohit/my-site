@@ -10,7 +10,6 @@ import {
   FaGuitar,
   FaMusic,
 } from "react-icons/fa";
-import { BsPianoFill } from "react-icons/bs";
 
 const socialLinks = [
   {
