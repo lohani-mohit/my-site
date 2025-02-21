@@ -12,8 +12,8 @@ const experiences = [
       "Leading QA & Release Management for Monetization",
       "Architected Test Automation for Web & Mobile platforms",
       "Worked on building Next.js web apps for user onboarding and monetization",
-      "Worked on migrating Wordpress to Payload CMS",
-      "Managing and monitoring subscription management",
+      "Worked on moigrating Wordpress to Payload CMS",
+      "Managing and moitoring subscription management",
     ],
     tech: [
       "Next.js",
@@ -25,7 +25,7 @@ const experiences = [
       "Amplitude",
       "Google Analytics",
       "Stripe",
-      "Vercel",
+      "Vercel"      
     ],
     icon: "🚀",
   },
@@ -39,16 +39,7 @@ const experiences = [
       "Implemented Cloud Infrastructure on AWS & GCP",
       "Established CI/CD pipelines and quality gates",
     ],
-    tech: [
-      "Appium",
-      "AWS",
-      "GCP",
-      "Jenkins",
-      "Python",
-      "Docker",
-      "Selenium",
-      "Playwright",
-    ],
+    tech: ["Appium", "AWS", "GCP", "Jenkins", "Python", "Docker","Selenium","Playwright"],
     icon: "👨‍💻",
   },
   {
@@ -60,15 +51,7 @@ const experiences = [
       "Implemented API and Performance testing solutions",
       "Set up automated CI/CD test pipelines",
     ],
-    tech: [
-      "Cypress",
-      "Selenium",
-      "K6",
-      "Jenkins",
-      "Docker",
-      "REST APIs",
-      "Java",
-    ],
+    tech: ["Cypress", "Selenium", "K6", "Jenkins", "Docker", "REST APIs" , "Java"],
     icon: "💼",
   },
   {
@@ -112,7 +95,7 @@ const experiences = [
     role: "Sr Engineer",
     period: "Aug 2012 - Sept 2014",
     highlights: [
-      "Banking Domain Testing",
+      "Banking Domain",
       "Built Test Automation Framework",
       "Web Application Testing",
       "Team Mentoring",
@@ -136,86 +119,68 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
           <h2 className="text-4xl font-bold text-center mb-16">
             Professional Journey
           </h2>
 
-          {/* Scrollable Container */}
-          <div className="relative">
-            {/* Gradient Overlays for scroll indication */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-base-200 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-base-200 to-transparent z-10 pointer-events-none" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={exp.company}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-4xl">{exp.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-primary">
+                          {exp.company}
+                        </h3>
+                        <p className="text-lg font-semibold">{exp.role}</p>
+                      </div>
+                      <span className="text-sm text-neutral/80 bg-base-200 px-3 py-1 rounded-full">
+                        {exp.period}
+                      </span>
+                    </div>
 
-            {/* Scrollable Cards */}
-            <div className="flex overflow-x-auto pb-4 gap-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={exp.company}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[85vw] md:w-[600px] snap-center"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-4xl">{exp.icon}</span>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
-                        <div>
-                          <h3 className="text-xl font-bold text-primary">
-                            {exp.company}
-                          </h3>
-                          <p className="text-lg font-semibold">{exp.role}</p>
-                        </div>
-                        <span className="text-sm text-neutral/80 bg-base-200 px-3 py-1 rounded-full">
-                          {exp.period}
-                        </span>
+                    <div className="space-y-4">
+                      <div>
+                        <ul className="list-disc list-inside space-y-1">
+                          {exp.highlights.map((highlight, i) => (
+                            <li key={i} className="text-sm text-neutral/90">
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
-                      <div className="space-y-4">
-                        <div>
-                          <ul className="list-disc list-inside space-y-1">
-                            {exp.highlights.map((highlight, i) => (
-                              <li key={i} className="text-sm text-neutral/90">
-                                {highlight}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div>
-                          <h4 className="text-sm font-semibold text-primary/80 mb-2">
-                            Technologies
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.tech.map((tech, i) => (
-                              <span
-                                key={i}
-                                className="text-xs px-2 py-1 bg-base-300 rounded-full"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-primary/80 mb-2">
+                          Technologies
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.tech.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="text-xs px-2 py-1 bg-base-300 rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-
-          {/* Scroll Hint */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="text-center text-sm text-neutral/60 mt-4"
-          >
-            Scroll horizontally to view more experiences
-          </motion.p>
         </motion.div>
       </div>
     </section>
