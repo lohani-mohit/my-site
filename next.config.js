@@ -8,6 +8,14 @@ const nextConfig = {
   assetPrefix: "/my-site/",
   trailingSlash: true,
   distDir: "dist",
+  // Ensure proper static generation
+  generateStaticParams: async () => {
+    return [];
+  },
+  // Disable server components for static export
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;
