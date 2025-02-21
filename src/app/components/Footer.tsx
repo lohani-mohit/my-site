@@ -58,11 +58,6 @@ export default function Footer() {
               © {new Date().getFullYear()} Mohit Lohani. All rights reserved.
             </p>
           </div>
-
-          {/* Mountain Quote */}
-          <div className="text-xs text-neutral/40 italic">
-            "The mountains are calling and I must go"
-          </div>
         </div>
       </div>
     </footer>

@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaGuitar, FaMusic } from "react-icons/fa";
+import { FaMountain, FaGuitar } from "react-icons/fa";
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -30,65 +30,64 @@ export default function About() {
               </h3>
               <div className="space-y-4">
                 <p className="leading-relaxed">
-                  I started my journey as a middle-class college student in QA,
-                  armed with nothing but curiosity to learn and determination to
-                  grow. Through stumbles and setbacks, each challenge became a
-                  stepping stone, shaping my understanding and building
-                  resilience.
+                  I started my journey as a QA, armed with nothing but curiosity
+                  to learn and determination to grow. Through stumbles and
+                  setbacks, each challenge became a stepping stone, shaping my
+                  understanding and building resilience.
                 </p>
                 <p className="leading-relaxed">
-                  Today, as an engineer at Speechify, I continue to embrace
-                  growth and push beyond limits. With over 11 years in Quality
-                  Assurance and Development, I've evolved from manual testing to
-                  becoming an ISTQB certified Testing Professional and Full
-                  Stack Developer.
+                  Now at Speechify, I've expanded my horizons as a Full Stack
+                  Developer while maintaining my QA expertise. With over 11
+                  years in the field, I bring a unique blend of testing
+                  precision and development innovation to every project I
+                  undertake.
                 </p>
               </div>
             </div>
 
             <div className="bg-base-200 rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-semibold text-primary mb-6">
-                Musical Journey
+                Beyond Technology
               </h3>
-              <div className="space-y-6">
+
+              {/* Music Section */}
+              <div className="mb-8">
+                <h4 className="text-xl font-semibold text-primary/80 mb-4">
+                  Music
+                </h4>
                 <div className="flex items-start gap-4">
                   <span className="text-3xl text-primary">
                     <FaGuitar />
                   </span>
                   <div>
-                    <h4 className="text-xl font-semibold mb-2">Guitar</h4>
                     <p className="leading-relaxed">
-                      My primary instrument and constant companion. From
-                      acoustic melodies to electric riffs, music has been my way
-                      of expressing emotions and connecting with others.
+                      As a musician, I find joy in creating melodies that bridge
+                      emotions. Guitar is my primary instrument, accompanied by
+                      harmonica, keys, and backing vocals. Music has been my
+                      constant companion.
                     </p>
                   </div>
                 </div>
+              </div>
 
+              {/* Mountaineering Section */}
+              <div>
+                <h4 className="text-xl font-semibold text-primary/80 mb-4">
+                  Mountaineering
+                </h4>
                 <div className="flex items-start gap-4">
                   <span className="text-3xl text-primary">
-                    <FaMusic className="transform rotate-90" />
+                    <FaMountain />
                   </span>
                   <div>
-                    <h4 className="text-xl font-semibold mb-2">Harmonica</h4>
                     <p className="leading-relaxed">
-                      Adding soulful blues and folk elements to my musical
-                      repertoire, the harmonica brings a unique dimension to my
-                      performances.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl text-primary">
-                    <FaMusic />
-                  </span>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2">Piano</h4>
-                    <p className="leading-relaxed">
-                      Currently exploring the world of keys, adding another
-                      layer to my musical journey and understanding of
-                      composition.
+                      Born in the the Himalayas, mountains are integral to who I
+                      am. As an avid trekker, I've explored numerous trails in
+                      the mighty mountain range, each expedition teaching me
+                      valuable lessons about perseverance, strategic planning,
+                      and the importance of maintaining composure at high
+                      altitudes - skills that translate perfectly into my
+                      professional life.
                     </p>
                   </div>
                 </div>
