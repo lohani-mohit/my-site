@@ -2,7 +2,7 @@
   "name": "mohit-lohani-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lohani-mohit.github.io",
+  "homepage": "https://lohani-mohit.github.io/my-site",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
