@@ -30,6 +30,13 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Verify Environment
+        run: |
+          echo "Checking EmailJS Service ID prefix..."
+          echo "Service ID starts with: ${NEXT_PUBLIC_EMAILJS_SERVICE_ID:0:8}..."
+          echo "Template ID exists: ${{ secrets.EMAILJS_TEMPLATE_ID != '' }}"
+          echo "Public Key exists: ${{ secrets.EMAILJS_PUBLIC_KEY != '' }}"
+
       - name: Build
         run: npm run build
         env:
