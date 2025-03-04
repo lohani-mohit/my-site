@@ -6,6 +6,28 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const experiences = [
   {
+    company: "Moxtain",
+    role: "Founding Member",
+    period: "Sept 2017 - Present",
+    highlights: [
+      "Co-founded adventure travel company",
+      "Led 50+ successful Himalayan expeditions",
+      "Developed booking and management system",
+      "Built and managed company website",
+      "Handled digital marketing and social media",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "AWS",
+      "Digital Marketing",
+      "Social Media Management",
+    ],
+    icon: "⛰️",
+  },
+  {
     company: "Speechify Inc",
     role: "Individual Contributor",
     period: "Dec 2022 - Present",
