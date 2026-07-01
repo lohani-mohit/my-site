@@ -23,51 +23,75 @@ export default function Skills() {
             Skills & Expertise
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                category: "Testing & QA",
+                category: "Languages",
                 skills: [
-                  "Test Architecture",
-                  "Performance Testing",
-                  "API Testing",
-                  "Test Strategy",
-                  "Test Automation",
-                  "Quality Gates",
+                  "TypeScript",
+                  "JavaScript",
+                  "Node.js",
+                  "Python",
+                  "Java",
                 ],
               },
               {
-                category: "Development",
+                category: "Frontend",
                 skills: [
                   "React.js",
                   "Next.js",
-                  "Node.js",
-                  "TypeScript",
+                  "Redux",
+                  "Zustand",
+                  "Tailwind CSS",
+                  "Framer Motion",
+                ],
+              },
+              {
+                category: "Backend",
+                skills: [
+                  "NestJS",
+                  "Express",
                   "GraphQL",
-                  "MongoDB",
                   "REST APIs",
+                  "Prisma",
+                  "PostgreSQL",
+                  "MongoDB",
+                  "Redis",
+                  "Firebase",
+                ],
+              },
+              {
+                category: "AI & LLMs",
+                skills: [
+                  "Claude / Anthropic",
+                  "OpenAI",
+                  "LangChain",
+                  "LLM Apps & Agents",
+                  "Prompt Engineering",
+                  "RAG",
                 ],
               },
               {
                 category: "DevOps & Cloud",
                 skills: [
                   "CI/CD",
+                  "GitHub Actions",
                   "Docker",
                   "AWS",
-                  "GCloud",
+                  "Google Cloud",
                   "Kubernetes",
-                  "Infrastructure",
+                  "Turborepo",
                 ],
               },
               {
-                category: "Leadership",
+                category: "Testing & Quality",
                 skills: [
-                  "Technical Leadership",
-                  "System Design",
-                  "Mentoring",
-                  "Code Reviews",
-                  "Team Management",
-                  "Agile",
+                  "Playwright",
+                  "Cypress",
+                  "Vitest / Jest",
+                  "API Testing",
+                  "Test Automation",
+                  "Quality Gates",
                 ],
               },
             ].map((category, index) => (

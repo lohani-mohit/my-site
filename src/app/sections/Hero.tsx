@@ -69,7 +69,7 @@ export default function Hero() {
               Mohit Lohani
             </motion.h1>
             <h2 className="text-2xl md:text-3xl mt-4 text-white font-semibold drop-shadow-lg">
-              Software Engineer(Web, Test Automation, Backend)
+              Full-Stack Software Engineer • Web · Backend · AI
             </h2>
           </motion.div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mt-6 text-xl text-white/90 font-medium drop-shadow-lg"
           >
-            11+ Years of Excellence in Quality Engineering & Development
+            11+ Years Building for the Web — Full-Stack Development & AI
           </motion.p>
 
           <motion.div
@@ -113,7 +113,7 @@ export default function Hero() {
             className="mt-12"
           >
             <p className="text-lg text-white/90 font-medium drop-shadow-lg">
-              QA Expert • Developer • Musician
+              Full-Stack Developer • AI Builder • Musician
             </p>
           </motion.div>
 

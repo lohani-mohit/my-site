@@ -36,11 +36,11 @@ export default function About() {
                   understanding and building resilience.
                 </p>
                 <p className="leading-relaxed">
-                  Now at Speechify, I've expanded my horizons as a Full Stack
-                  Developer while maintaining my QA expertise. With over 11
-                  years in the field, I bring a unique blend of testing
-                  precision and development innovation to every project I
-                  undertake.
+                  Now at Speechify, I work as a Full-Stack Developer across
+                  backend and frontend — and I&apos;m increasingly building
+                  AI-powered products and developer tools. With over 11 years in
+                  the field, I bring a rare blend of engineering rigor and
+                  product intuition to everything I ship.
                 </p>
               </div>
             </div>
