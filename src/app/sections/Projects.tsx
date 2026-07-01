@@ -29,26 +29,28 @@ const experiences = [
   },
   {
     company: "Speechify Inc",
-    role: "Individual Contributor",
+    role: "Software Engineer — Full-Stack",
     period: "Dec 2022 - Present",
     highlights: [
-      "Leading QA & Release Management for Monetization",
-      "Architected Test Automation for Web & Mobile platforms",
-      "Worked on building Next.js web apps for user onboarding and monetization",
-      "Worked on migrating Wordpress to Payload CMS",
-      "Managing and monitoring subscription management",
+      "Full-stack development across Speechify's web platform — Next.js monorepo, React & TypeScript",
+      "Built onboarding, monetization & subscription flows end-to-end, from UI to APIs",
+      "Building AI-powered features and LLM-assisted developer tooling",
+      "Migrated WordPress to Payload CMS and integrated Stripe billing & analytics",
+      "Owned release quality with Playwright automation across web & mobile",
     ],
     tech: [
       "Next.js",
       "React",
       "TypeScript",
-      "Playwright",
-      "Google Cloud",
+      "Node.js",
+      "GraphQL",
+      "Redux",
+      "Firebase",
+      "Turborepo",
       "Payload CMS",
-      "Amplitude",
-      "Google Analytics",
       "Stripe",
-      "Vercel",
+      "Claude / LLMs",
+      "Playwright",
     ],
     icon: "🚀",
   },
@@ -175,9 +177,13 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-center mb-16">
+          <h2 className="text-4xl font-bold text-center mb-4">
             Professional Journey
           </h2>
+          <p className="text-center text-base md:text-lg text-neutral/80 max-w-2xl mx-auto mb-14">
+            11+ years in engineering — transitioning from QA &amp; SDET
+            leadership into full-stack and AI-focused development.
+          </p>
 
           {/* Mobile Scrollable / Desktop Grid */}
           <div className="relative">
