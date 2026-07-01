@@ -20,11 +20,13 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-center mb-16">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent pb-1">
+            About Me
+          </h2>
 
           {/* Two Column Layout - My Journey and Beyond Tech */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-base-200 rounded-xl p-8 shadow-lg">
+            <div className="bg-base-200 rounded-2xl p-8 shadow-lg border border-base-300/40 hover:shadow-xl transition-all">
               <h3 className="text-2xl font-semibold text-primary mb-6">
                 My Journey
               </h3>
@@ -36,16 +38,16 @@ export default function About() {
                   understanding and building resilience.
                 </p>
                 <p className="leading-relaxed">
-                  Now at Speechify, I work as a Full-Stack Developer across
-                  backend and frontend — and I&apos;m increasingly building
-                  AI-powered products and developer tools. With over 12 years in
-                  the field, I bring a rare blend of engineering rigor and
-                  product intuition to everything I ship.
+                  Now at Speechify, I work as a Full Stack Developer across
+                  backend and frontend, and I&apos;m increasingly building AI
+                  features and developer tools. With over 12 years in the field,
+                  I bring a rare blend of engineering rigor and product intuition
+                  to everything I ship.
                 </p>
               </div>
             </div>
 
-            <div className="bg-base-200 rounded-xl p-8 shadow-lg">
+            <div className="bg-base-200 rounded-2xl p-8 shadow-lg border border-base-300/40 hover:shadow-xl transition-all">
               <h3 className="text-2xl font-semibold text-primary mb-6">
                 Beyond Technology
               </h3>
@@ -121,7 +123,7 @@ export default function About() {
                 <motion.div
                   key={belief.title}
                   whileHover={{ scale: 1.02 }}
-                  className="bg-base-200 p-6 rounded-lg shadow-lg"
+                  className="bg-base-200 p-6 rounded-2xl shadow-lg border border-base-300/40 hover:-translate-y-1 hover:shadow-xl transition-all"
                 >
                   <span className="text-2xl mb-3 block">{belief.icon}</span>
                   <h4 className="text-xl font-semibold mb-3">{belief.title}</h4>

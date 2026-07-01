@@ -29,13 +29,14 @@ const experiences = [
   },
   {
     company: "Speechify Inc",
-    role: "Software Engineer — Full-Stack",
+    role: "Full Stack Software Engineer",
     period: "Dec 2022 - Present",
     highlights: [
-      "Full-stack development across Speechify's web platform — Next.js monorepo, React & TypeScript",
-      "Built onboarding, monetization & subscription flows end-to-end, from UI to APIs",
-      "Building AI-powered features and LLM-assisted developer tooling",
-      "Migrated WordPress to Payload CMS and integrated Stripe billing & analytics",
+      "Full stack development across Speechify's web platform (Next.js monorepo, React, TypeScript)",
+      "Built onboarding, billing & subscription features",
+      "Built a marketing attribution framework powering GTM analytics",
+      "Building AI features and developer tooling with LLMs",
+      "Migrated WordPress to Payload CMS and integrated Stripe billing",
       "Owned release quality with Playwright automation across web & mobile",
     ],
     tech: [
@@ -177,12 +178,12 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-center mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent pb-1">
             Professional Journey
           </h2>
           <p className="text-center text-base md:text-lg text-neutral/80 max-w-2xl mx-auto mb-14">
-            12+ years in engineering — transitioning from QA &amp; SDET
-            leadership into full-stack and AI-focused development.
+            12+ years in engineering, moving from QA &amp; SDET leadership into
+            full stack and AI focused development.
           </p>
 
           {/* Mobile Scrollable / Desktop Grid */}
@@ -217,7 +218,7 @@ export default function Projects() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex-none w-[90vw] max-w-[500px] md:w-auto snap-center md:snap-align-none md:mb-8"
+                    className="bg-base-100 rounded-2xl p-6 shadow-lg border border-base-300/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex-none w-[90vw] max-w-[500px] md:w-auto snap-center md:snap-align-none md:mb-8"
                   >
                     <div className="flex items-start gap-4">
                       <span className="text-4xl">{exp.icon}</span>

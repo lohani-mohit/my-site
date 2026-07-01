@@ -19,7 +19,7 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent pb-1">
             Skills & Expertise
           </h2>
 
@@ -100,7 +100,7 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-base-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-base-200 p-6 rounded-2xl shadow-lg border border-base-300/40 hover:shadow-xl hover:-translate-y-1 transition-all"
               >
                 <h4 className="text-xl font-semibold mb-6 text-primary">
                   {category.category}
