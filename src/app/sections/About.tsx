@@ -38,7 +38,7 @@ export default function About() {
                 <p className="leading-relaxed">
                   Now at Speechify, I work as a Full-Stack Developer across
                   backend and frontend — and I&apos;m increasingly building
-                  AI-powered products and developer tools. With over 11 years in
+                  AI-powered products and developer tools. With over 12 years in
                   the field, I bring a rare blend of engineering rigor and
                   product intuition to everything I ship.
                 </p>

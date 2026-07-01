@@ -181,7 +181,7 @@ export default function Projects() {
             Professional Journey
           </h2>
           <p className="text-center text-base md:text-lg text-neutral/80 max-w-2xl mx-auto mb-14">
-            11+ years in engineering — transitioning from QA &amp; SDET
+            12+ years in engineering — transitioning from QA &amp; SDET
             leadership into full-stack and AI-focused development.
           </p>
 

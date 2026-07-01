@@ -79,7 +79,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mt-6 text-xl text-white/90 font-medium drop-shadow-lg"
           >
-            11+ Years Building for the Web — Full-Stack Development & AI
+            12+ Years Building for the Web — Full-Stack Development & AI
           </motion.p>
 
           <motion.div
